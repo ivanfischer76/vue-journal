@@ -1,4 +1,4 @@
 
-// export const myGetter = ({state}) => {
+// export const myGetter = (state) => {
 // 	 return state
 // }
