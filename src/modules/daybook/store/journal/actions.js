@@ -17,11 +17,12 @@ export const loadEntries = async ({commit}) => {
 }
 
 export const updateEntry = async({commit}, entry) => {
-	const { id, ...rest} = entry
-	const dataToSave = { ...rest }
+	const { date, picture, text } = entry
+	const dataToSave = { date, picture, text }
 	const resp = await journalApi.put(`/entries/${entry.id}.json`, dataToSave)
-	commit('updateEntry', { ...entry }) 
-	// { ...entry } es para que no lo pase por referencia porque sino al modificaro 
+	dataToSave.id = entry.id
+	commit('updateEntry', { ...dataToSave }) 
+	// { ...dataToSave } es para que no lo pase por referencia porque sino al modificaro 
 	// intentaría modificar el state directamente y no se permite
 }
 

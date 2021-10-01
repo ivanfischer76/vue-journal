@@ -43,7 +43,7 @@
 		icon="fa-save"
 		@on:click="saveEntry"
 	/>
-	<img v-if="entry.picture && !localImage"
+	<img v-if="entry && entry.picture && !localImage"
 		:src="entry.picture" 
 		alt="entry-picture"
 		class="img-thumbnail"
@@ -64,6 +64,7 @@ import Swal from 'sweetalert2'
 import uploadImage from '../helpers/uploadImage'
 
 export default {
+	name: 'EntryView',
 	components: {
 		Fab: defineAsyncComponent(() => import(/* webpackChunkName: "Fab-button" */ '../components/Fab.vue'))
 	},
@@ -118,7 +119,7 @@ export default {
 		},
 
 		async saveEntry() {
-			new Swal({
+			Swal.fire({
 				title: 'Espere por favor',
 				allowOutsideClick: false
 			})
@@ -146,7 +147,7 @@ export default {
 				confirmButtonText: 'Si, estoy seguro'
 			})
 			if( isConfirmed ) {
-				new Swal({
+				Swal.fire({
 					title: 'Espere por favor',
 					allowOutsideClick: false
 				})

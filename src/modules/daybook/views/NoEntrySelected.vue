@@ -11,6 +11,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 export default {
+	name: 'NoEntrySelected',
 	components: {
 		Fab: defineAsyncComponent(() => import(/* webpackChunkName: "Fab-button" */ '../components/Fab.vue'))
 	},
