@@ -7,7 +7,7 @@ const uploadImage = async(file) => {
 		formData.append('upload_preset', 'curso-vue-fh')
 		formData.append('file', file)
 		// cambiar 'demo' por el usuario de cloudinary
-		const url = 'https://api.cloudinary.com/v1_1/demo/image/upload'
+		const url = process.env.VUE_APP_IMAGE_URL
 		const { data } = await axios.post(url, formData)
 
 		return data.secure_url
