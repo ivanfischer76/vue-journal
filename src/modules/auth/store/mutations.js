@@ -17,7 +17,7 @@ export const logout = ( state ) => {
 	state.user = null
 	state.idToken = null
 	state.refreshToken = null
-	state.status = 'no-authenticated'
+	state.status = 'not-authenticated'
 	localStorage.removeItem('idToken')
 	localStorage.removeItem('refreshToken')
 }

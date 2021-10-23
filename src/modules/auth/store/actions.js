@@ -7,7 +7,7 @@ export const checkAuthentication = async({commit}) => {
 	if(!idToken){
 		commit('logout')
 		return {
-			ok:false,
+			ok: false,
 			message: 'No hay token'
 		}
 	}

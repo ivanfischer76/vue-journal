@@ -4,16 +4,17 @@ import uploadImage from '@/modules/daybook/helpers/uploadImage'
 import axios from 'axios'
 
 cloudinary.config({
-	cloud_name: process.env.VUE_APP_CLOUD_NAME,
-	api_key: process.env.VUE_APP_API_KEY_CLOUDYNARY,
-	api_secret: process.env.VUE_APP_API_SECRET_CLOUDINARY,
+	// éstas variables están declaradas en /tests/jest/setEnvVars.js, no en .env
+	cloud_name: process.env.CLOUD_NAME, 
+	api_key: process.env.API_KEY_CLOUDYNARY, 
+	api_secret: process.env.API_SECRET_CLOUDINARY, 
 })
 
 describe('Pruebas en el uploadImage', () => {
 	// test('debe cargar un archivo y retornar el url', async( done ) => {
-	test('debe cargar un archivo y retornar el url', async() => {
+	test('debe cargar un archivo y retornar el url', async( done ) => {
 		// tomamos un imagen de la web, en este caso de cloudinary
-		const { data } = await axios.get(process.env.VUE_APP_IMAGE_CLOUDINARY, {
+		const { data } = await axios.get(process.env.IMAGE_CLOUDINARY, { 
 			responseType: 'arraybuffer'
 		})
 		const file = new File([data], 'foto.jpg')

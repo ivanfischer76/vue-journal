@@ -1,0 +1,17 @@
+
+// variable de entorno para pruebas de subida de archivo a cloudinary
+// extraer las claves de https://cloudinary.com/console/  en dashboard
+// colocar las claves y renombrar este archivo a setEnvVars.js
+// asegurarse que en el archivo de configuración jest.config.js tenga la ruta corrcta a este archivo
+// en la línea setupFiles: ['']
+process.env.CLOUD_NAME='',
+process.env.API_KEY_CLOUDYNARY='',
+process.env.API_SECRET_CLOUDINARY='',
+process.env.IMAGE_CLOUDINARY=''
+
+// url firebase, obtener desde
+// https://console.firebase.google.com/
+process.env.BASE_URL='', //no usada
+process.env.BASE_AUTH_URL=',
+// la siguiente apiKey se puede obtener de: https://console.firebase.google.com/project/vue-demos-88b93/settings/general
+process.env.API_KEY_FIREBASE_AUTH=''

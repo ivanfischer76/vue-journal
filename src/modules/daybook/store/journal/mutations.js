@@ -4,7 +4,7 @@ export const addEntry = ( state, entry ) => {
 	state.entries = [entry, ...state.entries]
 }
 
-export const clearEntry = ( state ) => {
+export const clearEntries = ( state ) => {
 	state.entries = []
 }
 
